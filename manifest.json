@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Popup Killer",
+  "version": "1.0",
+  "description": "Blocks popups before they appear and limits device info access.",
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
+
